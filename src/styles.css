@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+/* styles.css */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+/* Fondo */
+body {
+    background-color: #e6f7ff; /* Celeste más claro */
+    font-family: Arial, sans-serif;
+  }
+
+  .center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    background-color: #fff; /* Fondo blanco para el contenido principal */
+    border-radius: 10px; /* Bordes redondeados para el contenido */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sutil sombra */
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .completed-task {
+    text-decoration: line-through; /* Tachar el texto */
+    background-color: #b1afaf; /* Fondo gris claro */
+  }
+  
+  .completed {
+    color: green; /* Color verde para el texto de tareas completadas */
+  }

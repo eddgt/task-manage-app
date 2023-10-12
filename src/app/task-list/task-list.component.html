@@ -1,0 +1,35 @@
+<!-- src/app/task-list/task-list.component.html -->
+<div class="center-content">
+  <div class="container">
+    <h1>Lista de Tareas</h1>
+    <button routerLink="/add" class="btn btn-primary"><i class="fa fa-plus"></i> Agregar Tarea</button>  
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Título</th>
+          <th>Descripción</th>
+          <th>Estado</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of tasks" [ngStyle]="{'background-color': task.completed ? '#b1afaf' : 'transparent'}">
+          <td [ngClass]="{'completed-task': task.completed}">
+            <span [class.completed]="task.completed">{{ task.title }}</span>
+          </td>
+          <td [ngClass]="{'completed-task': task.completed}">
+            <span [class.completed]="task.completed">{{ task.description }}</span>
+          </td>
+          <td [ngClass]="{'completed-task': task.completed}">
+            <span [class.completed]="task.completed">{{ task.completed ? 'Completada' : 'Pendiente' }}</span>
+          </td>
+          <td>
+            <button (click)="editTask(task.id)" class="btn btn-primary mr-2"><i class="fa fa-edit fa-lg"></i> </button>
+            <button (click)="viewDetails(task.id)" class="btn btn-info mr-2"><i class="fa fa-info-circle fa-lg"></i> </button>
+            <button (click)="deleteTask(task.id)" class="btn btn-danger"><i class="fa fa-trash fa-lg"></i> </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
